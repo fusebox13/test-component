@@ -1,0 +1,88 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../paper-behaviors/paper-ripple-behavior.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
+<!--
+`test-component`
+Testing area
+
+@demo demo/index.html
+-->
+
+<dom-module id="test-component">
+  <template>
+    <style>
+      :host {
+        display: block;
+        --paper-tabs-selection-bar-color: black;
+        --paper-tab-ink: black;
+        --iron-icon-height: 16px;
+        --iron-icon-width: 16px;
+
+        --paper-tab: {
+          border-radius: 25px 25px 0px 0px;
+          box-shadow: 2px 2px 2px 1px #aaaaaa;
+          background: #e5e5e5;
+          opacity: 1;
+          margin-left: 4px;
+
+
+        }
+      }
+      paper-tabs {
+        --paper-tabs-selection-bar-color: #7a7a7a;
+        --paper-tabs-selection-bar: {
+          z-index: 9999;
+        }
+        --paper-tabs: {
+          width: 50%;
+          border-radius: 25px 25px 0px 0px;
+        }
+
+      }
+
+      .icon {
+        background: #aaaaaa;
+        color: #e5e5e5;
+        position: absolute;
+        top: 0.75em;
+        right: 0;
+        border: 1px solid #7a7a7a;
+        border-radius: 25px;
+      }
+    </style>
+  <paper-tabs selected={{selected}}>
+    <paper-tab><iron-icon class="icon" color="red" icon="close"></iron-icon></paper-tab>
+    <paper-tab><iron-icon class="icon" color="red" icon="close"></iron-icon></paper-tab>
+    <paper-tab><iron-icon class="icon" color="red" icon="close"></iron-icon></paper-tab>
+  </paper-tabs>
+  <iron-pages selected={{selected}}>
+    <div>Page 1</div>
+    <div>Page 2</div>
+    <div>Page 3</div>
+  </iron-pages>
+  </template>
+  <script>
+    Polymer({
+
+      is: 'test-component',
+      properties: {
+        prop1: {
+          type: String,
+          value: 'test-component',
+        },
+        selected: {
+          type: Number,
+          value: 0
+
+        }
+      },
+
+    });
+  </script>
+</dom-module>
